@@ -1,6 +1,5 @@
-#include "PPMIO/libs/ppm_io.cpp"
-#include "graph/graph.cpp"
-#include "graph/max_flow.hpp"
+#include "Color/rgb.cpp"
+#include "Color/hsv.cpp"
 
 #include <iostream>
 
@@ -62,15 +61,11 @@ int main(int argc, char ** argv)
         std::cout << "PPM image in and out are not the same!" << std::endl;
     }
     */
-    Graph* test = new Graph(5);
+    auto rgb = RGB(129,88,47);
 
-    test->add_edge(0,1);
-    test->add_edge(1,3);
-    test->add_edge(1,2);
-    test->add_edge(3,4);
+    auto hsv = HSV(rgb);
 
-
-    depth_first_search(*test, 0);
+    std::cout << hsv.hue << "\n" << hsv.saturation << "\n" << hsv.value << std::endl;
     
     return 0;
 }

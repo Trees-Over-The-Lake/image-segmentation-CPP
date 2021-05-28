@@ -26,10 +26,6 @@
             add_vertex();
     }
 
-    Graph::Graph(PPM in) {
-        
-    }
-
     //Return the number of vertices the graph has
     counter Graph::vertices_num() {
         return this->vertices;

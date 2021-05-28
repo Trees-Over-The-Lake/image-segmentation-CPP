@@ -54,7 +54,7 @@ class Graph {
         Graph(counter vertices = 3);
 
         // Create a network flow graph from a .ppm image
-        Graph(PPM in);
+        //Graph(PPM in);
 
         //*************************************************************************//
         //Getters
