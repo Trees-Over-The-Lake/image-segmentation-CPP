@@ -43,8 +43,6 @@ class Graph {
         // Visit a specific vertex and verify the color of the adjs
         //This is a function only used in depth first search
 
-        void visit_vertex (counter index, std::vector<counter>* colour);
-
         //Verify if a certain vertex exists
         bool has_vertex(counter id);
 
@@ -67,6 +65,10 @@ class Graph {
         // get number of edges of the graph
         counter edges_num();
 
+        // get the adjs of a vertex by its index
+
+        std::vector<counter> get_adjs(counter id);
+
         //*************************************************************************//
         //Basic graph operations
         
@@ -81,20 +83,6 @@ class Graph {
 
         // Print all data about the graph
         virtual void print();  
-
-        //*************************************************************************//
-        // Special algorithms
-
-        /** Make a Depth First Search in the Graph and 
-         * count all of the cycles inside of such Graph
-         * 
-         *  Significance of the colours:
-         * 
-         *  WHITE: Not explored
-         *  YELLOW: Visited, but there's still adjacents to visit 
-         *  RED: Visited, along with the adjacents
-         */
-         bool depth_first_search(counter first);
 };      
 
 #endif

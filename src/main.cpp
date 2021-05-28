@@ -1,9 +1,13 @@
 #include "PPMIO/libs/ppm_io.cpp"
+#include "graph/graph.cpp"
+#include "graph/max_flow.hpp"
 
 #include <iostream>
 
 int main(int argc, char ** argv)
 {
+
+    /*
     PPM ppmIn;
     int status;
 
@@ -57,6 +61,16 @@ int main(int argc, char ** argv)
     {
         std::cout << "PPM image in and out are not the same!" << std::endl;
     }
+    */
+    Graph* test = new Graph(5);
+
+    test->add_edge(0,1);
+    test->add_edge(1,3);
+    test->add_edge(1,2);
+    test->add_edge(3,4);
+
+
+    depth_first_search(*test, 0);
     
     return 0;
 }

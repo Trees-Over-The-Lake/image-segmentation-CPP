@@ -36,6 +36,10 @@
         return this->edges;
     }
 
+    std::vector<counter> Graph::get_adjs(counter id) {
+        return this->adj.at(id);
+    }
+
     counter Graph::add_vertex() {
         counter result = -1;
         counter pos    = this->vertices;
@@ -108,47 +112,4 @@
             std::cout<< "edges: " << i->second.first << "," << i->second.second << "\t weight: " << i->first << std::endl;
         
 
-    }
-
-    bool Graph::depth_first_search(counter first) {
-        std::vector<counter> colour;
-
-        //Mark all vertices as : "NOT VISITED"
-        for(int i = 0; i < this->vertices; i++)
-            colour.push_back(WHITE);
-
-        //Loop through all vertices in the graph
-        for(counter i = 0; i < this->vertices; i++) 
-
-            //if the curr vertex hasn't been visited
-            if(colour.at(i) == WHITE) 
-
-                //visiting current vertex
-                //Obs: I'm sending a pointer to the 
-                //memory address of the 'colour' std::vector
-                //so that all recursive calls to 'visit_vertex'
-                //can update when a vertex is visited
-                visit_vertex(i,&colour);
-
-        return true;
-    }
-
-    void Graph::visit_vertex (counter index, std::vector<counter>* colour) {
-        //Mark current vertex as visited
-        colour->at(index) = YELLOW;
-
-        //Start adj std::vector
-        std::vector<counter> curr_vertex_adj = this->adj.at(index); 
-
-        //Loop through adj std::vector of the curr_vertex
-        for(int i = 0 ; i < curr_vertex_adj.size(); i++) 
-
-            //if adj vertex hasn't been visited
-            if(colour->at(curr_vertex_adj.at(i)) == WHITE)
-
-                //recursive call to 'visit_vertex'
-                visit_vertex(curr_vertex_adj.at(i),colour);
-        
-        //Mark vertex as completed
-        colour->at(index) = RED;
     }
