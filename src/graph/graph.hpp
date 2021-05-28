@@ -3,12 +3,9 @@
 
 #define EMPTY -1
 
-#define WHITE  0
-#define YELLOW 1
-#define RED    2
-
 #include <vector>
 #include <stdint.h>
+#include "../PPMIO/libs/ppm_io.cpp"
 
 using weight  = int;
 using counter = uint16_t;
@@ -55,6 +52,9 @@ class Graph {
 
         // Start the Graph with 'vertices' number of vertices
         Graph(counter vertices = 3);
+
+        // Create a network flow graph from a .ppm image
+        Graph(PPM in);
 
         //*************************************************************************//
         //Getters
