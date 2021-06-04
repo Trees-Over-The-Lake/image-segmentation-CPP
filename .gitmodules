@@ -1,6 +1,0 @@
-[submodule "src/PPMIO"]
-	path = src/PPMIO
-	url = https://github.com/leimao/PPMIO.git
-[submodule "src/matrix_cpp"]
-	path = src/matrix_cpp
-	url = git@github.com:GustavoLR548/matrix_cpp.git
