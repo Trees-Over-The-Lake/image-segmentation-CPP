@@ -12,11 +12,7 @@
     // Start the graph matrix with a set size
     Graph::Graph(PPM image) {
         
-        auto data = image.getImageHandler();
-
-        for (int32_t i = 0; i < image.getH() * image.getW() * 3; i+=3) {
-            int32_t pixel = (data[i]+ data[i+1]+ data[i+2])/3;
-        }
+        auto data = image.getRGBImage();
 
     }
 

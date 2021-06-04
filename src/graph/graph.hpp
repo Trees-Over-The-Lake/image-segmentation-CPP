@@ -5,7 +5,7 @@
 
 #include <vector>
 #include <stdint.h>
-#include "../PPMIO/libs/ppm_io.cpp"
+#include "../PPMIO/libs/ppm_io.h"
 
 using weight  = int;
 using counter = uint16_t;
