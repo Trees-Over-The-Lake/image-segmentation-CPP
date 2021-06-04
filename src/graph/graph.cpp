@@ -9,21 +9,15 @@
 *  v0.1
 */
 
-    // Start the graph with the 'min' size of Matrix
-    Graph::Graph() {
-
-        this->vertices = 0;
-        this->edges    = 0;
-    }
-
     // Start the graph matrix with a set size
-    Graph::Graph(counter v) {
+    Graph::Graph(PPM image) {
         
-        this->edges    = 0;
-        this->vertices = 0;
+        auto data = image.getImageHandler();
 
-        for(int i =0 ; i < v; i++) 
-            add_vertex();
+        for (int32_t i = 0; i < image.getH() * image.getW() * 3; i+=3) {
+            int32_t pixel = (data[i]+ data[i+1]+ data[i+2])/3;
+        }
+
     }
 
     //Return the number of vertices the graph has
@@ -71,6 +65,7 @@
 
             this->edges_weights.push_back(weight_edges_pair);
             add_adj(first, last);
+            add_adj(last,first);
             result = true;
         }
 

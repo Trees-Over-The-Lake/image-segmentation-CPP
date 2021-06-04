@@ -45,13 +45,10 @@ class Graph {
 
     public:
 
-        //Constructors
+        //Constructor
 
-        // Start the Graph with three empty vertices
-        Graph();
-
-        // Start the Graph with 'vertices' number of vertices
-        Graph(counter vertices = 3);
+        // Start the Graph from an image 
+        Graph(PPM image);
 
         // Create a network flow graph from a .ppm image
         //Graph(PPM in);
